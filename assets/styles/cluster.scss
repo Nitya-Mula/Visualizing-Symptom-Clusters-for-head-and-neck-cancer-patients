@@ -1,0 +1,113 @@
+#scatterplot {
+  height: 80%;
+  width: 70%;
+
+  svg {
+    height: 95%;
+    width: 100%;
+    margin-left: -7%;
+    padding: 12px;
+  }
+}
+
+#scatterplot text {
+  font-weight: lighter;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 0.5rem;
+  text-transform: uppercase;
+}
+
+.size-scale,
+.shape-scale,
+.color-scale {
+  --margin: 8px;
+  color: black;
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 6px;
+  width: fit-content;
+  position: absolute;
+
+  p {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 6px;
+  }
+
+  .color-circle {
+    border-radius: 0px;
+    border: 1px solid black;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin-right: 8px;
+    background-color: black;
+  }
+}
+
+.size-scale {
+  right: 4px;
+  bottom: unset;
+
+  .color-circle.t1 {
+    width: 6px;
+    height: 6px;
+  }
+
+  .color-circle.t2 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .color-circle.t3 {
+    width: 12px;
+    height: 12px;
+  }
+
+  .color-circle.t4 {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.shape-scale {
+  .color-circle.male {
+    width: 16px;
+    height: 16px;
+  }
+
+  .color-circle {
+    border-radius: 20px;
+  }
+
+  .color-circle.female {
+    border: none;
+    background: url(/assets/imgs/hex.png);
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+  }
+}
+
+.color-scale {
+  left: var(--margin);
+
+  .color-circle {
+    opacity: 0.65;
+  }
+
+  .color-circle.severe {
+    background-color: #de2d26;
+  }
+
+  .color-circle.average {
+    background-color: #fc9272;
+  }
+
+  .color-circle.mild {
+    background-color: #fee0d2;
+  }
+}

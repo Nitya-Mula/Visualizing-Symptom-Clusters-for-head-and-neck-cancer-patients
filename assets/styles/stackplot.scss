@@ -1,0 +1,29 @@
+#stackedLinePlot {
+  text {
+    font-size: 10px;
+  }
+
+  display: flex;
+}
+
+#stackplotLegend {
+  display: flex;
+  margin-top: 10%;
+}
+
+#stackplot {
+  width: 580px;
+}
+
+#stackplotLegend {
+  position: realtive;
+  border: none;
+  border-radius: 4px;
+  color: black;
+  font-size: 1rem;
+  height: 35%;
+  width: 20%;
+  padding-left: 200px;
+  padding-bottom: 5px;
+  font-size:1.5rem ;
+}
