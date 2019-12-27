@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Symptom Clusters</title>
+  <link rel="stylesheet" href="./assets/styles/main.scss">
+</head>
+
+<body>
+  <select multiple id="patient-list" class="ui dropdown">
+    <option id="patient-list-placeholder" value="">Select Patient ID(s)</option>
+  </select>
+  <div class="symtomsDropDown">
+    <select multiple id="symptoms-list" class="ui dropdown">
+      <option id="symptoms-list-placeholder" value="">Select Symptom(s)</option>
+    </select>
+  </div>
+  <div id="time-slider" class="ui labeled ticked slider"></div>
+  <div class="flex-container-row">
+    <div class="flex-container-column">
+      <div class="flex-item">
+        <div class="tab">
+          <button class="tablinks1 active" id="scatterplot-btn">Symptom Clusters</button>
+          <button class="tablinks1" id="correlation-btn">Time Selection</button>
+          <button class="tooltip" id="infoButton">i
+            <span class="tooltiptext">This is a clustering representation of the overall rating severity of each patient
+            </span>
+          </button>
+        </div>
+        <div class="tabcontent1 show">
+          <div id="scatterplot">
+          </div>
+          <p id='defaultPatientText'></p>
+          <div id="scales">
+            <div class="color-scale">
+              <p>Ratings Severity</p>
+              <p><span class="color-circle mild"></span> Mild</p>
+              <p><span class="color-circle average"></span> Average</p>
+              <p><span class="color-circle severe"></span> Severe</p>
+            </div>
+            <div class="shape-scale">
+              <p>Gender</p>
+              <p><span class="color-circle male"></span> Male</p>
+              <p><span class="color-circle female"></span> Female</p>
+            </div>
+            <div class="size-scale">
+              <p>Tumor Category</p>
+              <p><span class="color-circle t1"></span> T1</p>
+              <p><span class="color-circle t2"></span> T2</p>
+              <p><span class="color-circle t3"></span> T3</p>
+              <p><span class="color-circle t4"></span> T4</p>
+            </div>
+          </div>
+          <div id="patient-history" class="tabcontent2 show">
+            <div id="patient-info">
+            </div>
+            <div class="rating-scale">
+              <p>Rating</p>
+              <div style="background-color: #bdbdbd;" class="box"><span>0</span></div>
+              <div style="background-color: #d9d9d9;" class="box"><span>1</span></div>
+              <div style="background-color: #fee0d2;" class="box"><span>2</span></div>
+              <div style="background-color: #fcbba1;" class="box"><span>3</span></div>
+              <div style="background-color: #fc9272;" class="box"><span>4</span></div>
+              <div style="background-color: #fb6a4a;" class="box"><span>5</span></div>
+              <div style="background-color: #ef3b2c;" class="box"><span>6</span></div>
+              <div style="background-color: #cb181d;" class="box"><span>7</span></div>
+              <div style="background-color: #a50f15;" class="box"><span>8</span></div>
+              <div style="background-color: #67000d;" class="box"><span>9</span></div>
+              <div style="background-color: #4a1212;" class="box"><span>10</span></div>
+            </div>
+          </div>
+          <div id="matrix" class="tabcontent1">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-container-column">
+      <div class="flex-item">
+        <div id="stack" class="tabcontent2 show">
+          <div id="stackedLinePlot">
+            <div id="stackplot"></div>
+            <div id="stackplotLegend" >
+              
+            <div style="padding-top: 15px;" id="patientIDLine">
+                <svg width="50" id="patientIDLineSVG">
+                  <line id="patient1" x1="0" y1="10" x2="45" y2="10" style="stroke:black;stroke-width:1"
+                    visibility="hidden" />
+                  <line id="patient2" x1="0" y1="40" x2="45" y2="40" stroke-dasharray="10,10"
+                    style="stroke:black;stroke-width:1" visibility="hidden" />
+                  <line id="patient3" x1="0" y1="70" x2="45" y2="70" stroke-dasharray="5,5"
+                    style="stroke:black;stroke-width:1" visibility="hidden" />
+                </svg>
+              </div>
+              <div style="padding-top: 15px;" id="patientID">
+                <svg width="200" id="patientIDSVG">
+                  <text id="line1" x="10" y="15"></text>
+                  <text id="line2" x="10" y="45"></text>
+                  <text id="line3" x="10" y="75"></text>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div id="tendril">
+          </div>
+<!--           <div class="tab" style="margin-right: 90%;margin-bottom: 1%;">
+            <button class="tooltip" id="infoButton">i
+              <span class="tooltiptext">This is a tendril plot
+              </span>
+            </button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <script src="./src/index.js"></script>
+</body>
+
+</html>
